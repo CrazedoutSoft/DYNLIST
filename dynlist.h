@@ -53,7 +53,7 @@ dyn_list*	dyn_list_compare(dyn_list* list, int (*compfunc)(dyn_list* node, void*
 dyn_list* dyn_list_get(dyn_list* list, unsigned int index);
 
 /*Add node to the end of list */
-/* Return node added. */
+/* Return node added or NULL if new node could't be created. */
 dyn_list* 	dyn_list_add(dyn_list* list, void* data, unsigned int len);
 
 /*Add node to the end of list */
@@ -68,7 +68,7 @@ void	 	dyn_list_delete(dyn_list* list, unsigned int index);
 dyn_list*	 dyn_list_remove(dyn_list* list, unsigned int index);
 
 /* Create and insert node at index*/
-/* Return created node */
+/* Return node added or NULL if new node could't be created. */
 dyn_list* 	dyn_list_insert(dyn_list* list, void* data, unsigned int len, unsigned int index);
 
 /* Insert node at index*/

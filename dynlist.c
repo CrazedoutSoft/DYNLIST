@@ -105,6 +105,8 @@ DNODE* dyn_list_insert_node(DLIST* root, DNODE* node, unsigned int index){
 	dyn_list* tmp = NULL;
 	int n = 0;
 
+	if(node==NULL) return NULL;
+
 	while(ptr->next!=NULL){
 	  if(n==index){
 	    tmp = ptr->next;
@@ -123,6 +125,7 @@ DNODE* dyn_list_insert_node(DLIST* root, DNODE* node, unsigned int index){
 DNODE* dyn_list_insert(DLIST* root, void* data, unsigned int len, unsigned int index){
 
 	dyn_list* node = (dyn_list*)malloc(sizeof(dyn_list));
+	if(node==NULL) return NULL;
 	node->data = malloc(len);
 	node->next = NULL;
 	node->prev = NULL;
@@ -132,6 +135,8 @@ DNODE* dyn_list_insert(DLIST* root, void* data, unsigned int len, unsigned int i
 }
 
 DNODE* dyn_list_add_node(DLIST* root, DNODE* node){
+
+	if(node==NULL) return NULL;
 
 	dyn_list* ptr = root;
 	while(ptr->next!=NULL){
